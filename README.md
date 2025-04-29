@@ -1,6 +1,6 @@
 <h1>Image Processing Pipeline (Azure + Kubernetes + CI/CD)</h1>
 
-<p>A fully automated, serverless-to-Kubernetes hybrid pipeline that processes uploaded images. Built using Azure Functions, Azure Blob Storage, Azure Service Bus, Azure Kubernetes Service (AKS), Docker, GitHub Actions, and KEDA.</p>
+<p>A fully automated, serverless-to-Kubernetes pipeline that processes uploaded images. Built using Azure Functions, Azure Blob Storage, Azure Service Bus, Azure Kubernetes Service (AKS), Docker, GitHub Actions, and KEDA.</p>
 
 <h2>🚀 Project Overview</h2>
 
