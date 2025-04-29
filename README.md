@@ -14,16 +14,14 @@
 
 <h2>🛠️ Technologies Used</h2>
 
-<ul>
-<li><strong>Azure Blob Storage</strong> (Storage of original and processed images)</li>
-<li><strong>Azure Functions</strong> (Serverless event-driven trigger)</li>
-<li><strong>Azure Service Bus</strong> (Reliable messaging queue)</li>
-<li><strong>Azure Kubernetes Service (AKS)</strong> (Scalable container orchestration)</li>
-<li><strong>KEDA</strong> (Kubernetes Event-Driven Autoscaling based on Service Bus queue length)</li>
-<li><strong>Docker</strong> (Containerization of processor app)</li>
-<li><strong>GitHub Actions</strong> (CI/CD pipeline for auto-deployment)</li>
-<li><strong>Python 3.9</strong> (Both for Function App and Processor App)</li>
-</ul>
+| Category | Technology |
+|:---|:---|
+| ☁️ Cloud | **Azure Blob Storage**, **Azure Service Bus**, **Azure Kubernetes Service (AKS)** |
+| ⚡ Serverless | **Azure Functions** |
+| 📦 Containers | **Docker**, **DockerHub** |
+| 📈 Scaling | **KEDA (Kubernetes Event-Driven Autoscaling)** |
+| 🐍 Backend | **Python** with **Pillow** for image processing and **Azure SDKs** (`azure-storage-blob`, `azure-servicebus`) |
+| 🔁 CI/CD | **GitHub Actions** for building Docker images and updating Kubernetes deployments |
 
 <h2>📂 Repository Structure</h2>
 
