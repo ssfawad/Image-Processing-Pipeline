@@ -1,0 +1,23 @@
+# NOTE: This file is only needed for manual blob processing tests.
+# The live system uses KEDA for fully automated scaling of deployments.
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: image-processor-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: processor
+        image: syedsfawad/k8s-processor:v1
+        env:
+        - name: AZURE_STORAGE_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: storage-secret
+              key: connectionString
+        - name: BLOB_NAME
+          value: "test.png"    # <--- important, set to the uploaded file name for manual testing
+      restartPolicy: Never
+  backoffLimit: 1

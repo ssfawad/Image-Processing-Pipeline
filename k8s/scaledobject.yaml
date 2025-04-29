@@ -1,0 +1,19 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: image-processor-scaledobject
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: image-processor-deployment
+  pollingInterval: 5   # Check every 5 seconds
+  cooldownPeriod: 30   # Wait 30 seconds to scale down
+  minReplicaCount: 0
+  maxReplicaCount: 5
+  triggers:
+  - type: azure-servicebus
+    metadata:
+      namespace: <your-servicebus-namespace>
+      queueName: imgqueue
+      messageCount: "1"
+      connectionFromEnv: SERVICEBUS_CONNECTION_STRING

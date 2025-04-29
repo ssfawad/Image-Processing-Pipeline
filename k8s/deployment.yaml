@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-processor-deployment
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: image-processor
+  template:
+    metadata:
+      labels:
+        app: image-processor
+    spec:
+      containers:
+      - name: processor
+        image: syedsfawad/k8s-processor:latest
+        imagePullPolicy: Always   # <-- force pull fresh image every time
+        env:
+        - name: AZURE_STORAGE_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: storage-secret
+              key: connectionString
+        - name: SERVICEBUS_CONNECTION_STRING
+          valueFrom:
+            secretKeyRef:
+              name: servicebus-secret
+              key: connectionString
+      restartPolicy: Always
