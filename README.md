@@ -156,3 +156,6 @@ docker push &lt;your-dockerhub-username&gt;/k8s-processor:latest
 <h2>📜 License</h2>
 <p>This project is licensed for educational and demonstration purposes.</p>
 
+## 👨‍💻 Author
+
+Built with chai and code by [Syed Fawad]
