@@ -143,6 +143,9 @@ docker push &lt;your-dockerhub-username&gt;/k8s-processor:latest
 <li>Processor pod downloads the image, resizes it, and uploads it to "output" container.</li>
 </ol>
 
+![Screenshot](azure-workflow.png)
+
+
 <h2>✅ Features</h2>
 
 <ul>
